@@ -1,30 +1,34 @@
-# Processamento Geoespacial com R
+# Processamento Geoespacial com Python
 
-Este projeto está estruturado para análise de dados geoespaciais (SIG) seguindo boas práticas de organização.
+Este projeto está estruturado para análise de dados geoespaciais (GIS) utilizando Python.
 
 ## Estrutura de Pastas
 
 - `data/raw/`: Dados originais e imutáveis (Altimetria, MapBiomas, Rodovias).
-- `data/processed/`: Dados limpos e transformados prontos para análise.
-- `R/`: Funções personalizadas e módulos reutilizáveis.
-- `scripts/`: Scripts R para processamento pesado ou automação.
-- `reports/`: Relatórios em Rmarkdown ou Quarto para visualização dos resultados.
+- `data/processed/`: Dados limpos e transformados (Parquet, GeoPackage).
+- `src/`: Código fonte modular (.py).
+  - `processing/`: Scripts de processamento e limpeza.
+  - `viz/`: Scripts para geração de mapas.
+- `notebooks/`: Protótipos e análises exploratórias em Jupyter (.ipynb).
 
-## Pacotes Recomendados
+## Instalação
 
-Para começar, instale os pacotes principais executando no console do R:
+Recomenda-se o uso de um ambiente virtual (venv ou conda):
 
-```R
-install.packages(c("sf", "terra", "tmap", "tidyverse", "here"))
+```bash
+# Criar ambiente virtual
+python -m venv venv
+
+# Ativar no Windows
+.\venv\Scripts\activate
+
+# Instalar dependências
+pip install -r requirements.txt
 ```
 
-- **sf**: Manipulação de vetores.
-- **terra**: Manipulação de rasters.
-- **tmap**: Visualização de mapas.
-- **here**: Facilita o gerenciamento de caminhos de arquivos.
+## Bibliotecas Principais
 
-## Como usar
-
-1. Abra o arquivo `proc_geo_espac.Rproj` no RStudio.
-2. Coloque seus dados brutos em `data/raw/`.
-3. Crie scripts de processamento em `scripts/` e salve os resultados em `data/processed/`.
+- **GeoPandas**: Manipulação de dados vetoriais.
+- **Rasterio**: Manipulação de rasters (imagens de satélite, MDTs).
+- **Folium**: Mapas interativos para web.
+- **Contextily**: Provedor de mapas base (tiles).

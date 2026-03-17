@@ -1,0 +1,14 @@
+geobr
+requests
+geopandas
+rasterio
+shapely
+pyproj
+matplotlib
+folium
+mapclassify
+contextily
+pandas
+numpy
+tqdm
+jupyterlab
